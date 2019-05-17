@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17 mai 2019, 10:16:48
+    Author     : ffonteneau
+*/
+
+body{
+  background-image: url("background.jpg");
+  background-color: purple;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+
+*{
+    margin: 3%;
+    padding: 10px;
+}
+
+.boite-petite{
+    text-align: center;
+    background-color: rgba(255, 255, 218, 0.8); /* 0.5 - semi-transparent */
+    border: 2px solid violet;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    width: 220px;
+
+}
+
+.boite-moyenne{
+    text-align: center;
+    background-color: rgba(255, 255, 218, 0.8); /* 0.5 - semi-transparent */
+    border: 2px solid violet;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    width: 440px;
+}
+.boite-grande{
+    text-align: center;
+    background-color: rgba(255, 255, 218, 0.8); /* 0.5 - semi-transparent */
+    border: 2px solid violet;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    width:660px;
+}
+
+.message { margin: 25px; padding: 10px; border-radius: 10px; border: 2px solid violet; }
+
+.centrer {
+   margin-left: auto;
+    margin-right: auto;
+}
+
+.colonne1{
+  float: left;
+  margin: 30px;
+}
+
+.colonne2{
+    margin-left: 60%;
+
+}
+
+table, th, td{ 
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    border-radius: 5px;
+}
+
+
+.joli-bouton { 
+    padding: 3px 10px; 
+    border-radius: 5px; 
+    border-width: 3px; 
+    cursor: pointer; 
+}

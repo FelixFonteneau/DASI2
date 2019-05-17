@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Posit'IF</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Librairie Javascript: jQuery (v3.3.1) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel=StyleSheet href="../../src/employe.css" type="text/css" />
+
+        <style>
+            /* Feuille de Style CSS (dans la page) */
+            #message { margin: 25px; padding: 10px; border-radius: 10px; border: 2px solid violet; }
+            button.joli-bouton { padding: 3px 10px; border-radius: 5px; border-width: 3px; cursor: pointer; }
+        </style>
+        <style>
+            .graph { position:relative; width:660px; height:216px; margin:8px; padding:0; }
+            
+            .graph ul { position:absolute; top:0; left:32px; width:600px; height:200px; 
+                        border-left:1px solid black; border-bottom:1px solid black; }
+
+            .graph li { position:absolute; list-style:none; background:lightblue; width:40px;
+                        text-align:center; border:1px solid black; visibility: hidden;
+                        background-image:"https://www.xul.fr/css/bar-shaded.png"; background-repeat:repeat-y; }
+        </style>
+        
+    </head>
+    <body>
+        <h1>Profil</h1>
+        <div  id = "profil_employe">
+            <h4>Liste des mediums disponibles</h4>
+            <div class="boite-grande" id = "liste_mediums">
+                
+            </div>
+            <br>
+            <br>
+            <div class="boite-grande graphe" id="graphe_Popularite_Mediums">
+            100 <br /> <br /> <br /> 50 <br /> <br /> <br /> 0
+            
+            </div>
+            <div id="labelsM">Mediums</div>
+            
+            <div class="boite-grande graphe" id="graphe_Performance_Employes">
+            100 <br /> <br /> <br /> 50 <br /> <br /> <br /> 0
+            
+            </div>
+            <div id="labelsE">Employé</div>
+        </div>
+        
+        <a  class="joli-bouton boite-moyenne centrer" href="../voyance"> Voyance en Cours </a>
+
+        
+        <button id="bouton-deconnexion" class="joli-bouton boite-moyenne centrer">Se déconnecter</button>
+        
+        
+    <script src="profil.js"></script>
+    
+    </body>
+</html>

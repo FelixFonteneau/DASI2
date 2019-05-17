@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inscription/Login</title>
+        <meta charset="UTF-8">
+
+        <!-- Librairie Javascript: jQuery (v3.3.1) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel=StyleSheet href="../../src/client.css" type="text/css" />
+
+        <style>
+            /* Feuille de Style CSS (dans la page) */
+
+            
+        </style>
+    </head>
+    <body>
+
+        <h1 class="boite-moyenne centrer">Formulaire de login</h1>
+
+        <div class="colonne1">
+            <div class="boite-moyenne">
+                Identifiant : <input type="text" id="champ-login" name="login" placeholder="Identifiant" /><br>
+                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="Mot de Passe" /><br>
+                <button id="bouton-connexion" class="joli-bouton">Se Connecter</button>
+
+            </div>
+
+            <div class="boite-petite message" id="message">...</div>
+        </div>
+        <div class="colonne2">
+            <div class="boite-grande">
+                <p> Nouveau client ? Inscrivez-vous ! </p>
+                <input type="radio" id="radioM" name="civilite" value="m" checked>
+                <label for="m">M.</label>
+
+                <input type="radio" id="radioMme" name="civilite" value="mme">
+                <label for="mme">Mme</label>
+
+                <input type="radio" id="radioAutre" name="civilite" value="autre">
+                <label for="autre">Autre</label>
+                <br>
+
+                Nom  <input type="text" id="champ-nom" name="nom" placeholder="Nom" />
+                Prénom  <input type="text" id="champ-prenom" name="prenom" placeholder="Prénom" />
+
+                <br>
+
+                <input type="date" id="champ-date" name="date of birth" value="2000-01-01" min="1900-01-01" max="2019-04-30">
+
+                <br>
+
+                Adresse<input type="text" id="champ-adresse" name="adresse" placeholder="Adresse" />
+                Numéro de téléphone  <input type="text" id="champ-tel" name="tel" placeholder="Numéro" />
+
+                <br>
+
+                E-mail  <input type="text" id="champ-mail" name="mail" placeholder="E-mail" />
+                Mot de passe  <input type="password" id="password" name="password" placeholder="Mot de Passe" />
+
+                <br>
+
+                <button id="bouton-inscription" class="joli-bouton">Découvrir son profil astrologique !</button>
+
+            </div>
+
+        <div class="boite-petite message" id="message2">...</div>    
+        </div>
+        <script src="connexion.js"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profil</title>
+        <meta charset="UTF-8">
+
+        <!-- Librairie Javascript: jQuery (v3.3.1) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel=StyleSheet href="../../src/client.css" type="text/css" />
+
+        <style>
+            /* Feuille de Style CSS (dans la page) */
+            #message { margin: 25px; padding: 10px; border-radius: 10px; border: 2px solid violet; }
+            button.joli-bouton { padding: 3px 10px; border-radius: 5px; border-width: 3px; cursor: pointer; }
+        </style>
+        
+    </head>
+    <body>
+        
+        
+        <h1 class="boite-moyenne centrer">Profil</h1>
+        <a class="boite-moyenne" href="../demande_voyance"> Faire une demande de voyance </a>
+        <div class="boite-grande colonne1" id = "informations_profil">
+            <h4>Profil Astrologique</h4>
+            <div id = "SigneZodiaque">
+             
+            </div>
+            <div id = "SigneChinois">
+             
+            </div>
+            <div id = "Couleur">
+             
+            </div>
+            <div id = "Animal">
+             
+            </div>
+        </div>
+        <div class="boite-grande colonne2" id = "historique_voyance">
+            <h4>Historique des voyances</h4>
+
+        </div>
+        
+        <button  id="bouton-deconnexion" class="boite-petite joli-bouton">Se déconnecter</button>
+        
+        <div class="boite-petite message" id="message2">...</div>      
+        <script src="profil.js"></script>
+    </body>
+</html>
