@@ -1,12 +1,19 @@
+Action\VoyanceEmployeAction.class
 Serialisation\InfoClientSerialisation.class
 Action\ConsultationActuelleClientAction.class
 Action\InscrireClientAction.class
+Serialisation\PerformanceSerialisation.class
+Serialisation\PopulariteSerialisation.class
+Action\CloreConsultationAction.class
 Action\ConnecterEmployeAction.class
 Serialisation\Serialisation.class
 Action\DemandeConsultationAction.class
 Servlet\ActionServlet.class
 Action\ConnecterClientAction.class
 Serialisation\ListeMediumsSerialisation.class
+Action\AfficherPerformanceAction.class
+Serialisation\VoyanceEmployeSerialisation.class
+Action\GenererPredictionAction.class
 Serialisation\ListeConsultationsSerialisation.class
 Action\AfficherMediumsAction.class
 Serialisation\ConsultationActuelleClientSerialisation.class
@@ -15,4 +22,6 @@ Action\InfoClientAction.class
 Serialisation\ReponseVoyanceClientSerialisation.class
 Serialisation\ConnecterSerialisation.class
 Action\HistoriqueClientAction.class
+Serialisation\GenererPredictionSerialisation.class
 Action\Action.class
+Action\AfficherPopulariteAction.class

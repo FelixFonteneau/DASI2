@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Voyance en cours</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Librairie Javascript: jQuery (v3.3.1) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel=StyleSheet href="../../src/employe.css" type="text/css" />
+    </head>
+    <body>
+        <h2 class="centrer">Posit'IF Employé</h2>
+        <div class="colonne1">
+            <div class="boite-grande" id = "voyance">
+                <p>Profil client</p>
+            </div>
+
+            <div class="boite-grande"> 
+                <textarea id="commentaire" name="commentaire" rows="9" cols="75">
+Ajoutez un commentaire ...
+                </textarea>
+                <button onclick="cloreConsultation()">
+                    Mettre fin à la consultation
+                </button>
+            </div>
+        </div>
+        
+        
+        <div class="boite-grande colonne2" id ="generateur">
+                    
+            <div class="boite" id ="generateur-amour">
+                <h4>Amour</h4>
+                <input type="range" id="pointsAmour" min="1" max="4" list="tickmarks">
+                <datalist id="tickmarks">
+                  <option value="1">
+                  <option value="2">
+                  <option value="3">
+                  <option value="4">
+                </datalist>
+                <p id="resultatAmour"></p> 
+            </div>       
+            <div class="boite" id ="generateur-sante">
+                <h4>Sante</h4>
+                <input type="range" id="pointsSante" min="1" max="4" list="tickmarks">
+                <datalist id="tickmarks">
+                  <option value="1">
+                  <option value="2">
+                  <option value="3">
+                  <option value="4">
+                </datalist>
+                <p id="resultatSante"></p> 
+            </div>        
+            <div class="boite" id ="generateur-travail">
+                <h4>Travail</h4>
+                <input type="range" id="pointsTravail" min="1" max="4" list="tickmarks">
+                <datalist id="tickmarks">
+                  <option value="1">
+                  <option value="2">
+                  <option value="3">
+                  <option value="4">
+                </datalist>
+                <p id="resultatTravail"></p> 
+
+            </div>
+            <button onclick="genererPrediction()">
+                Générer prédiction
+            </button>
+        </div>
+        <a class="boite-petite joli-bouton" href="../profil">Retour au profil</a>
+        <button class="boite-petite joli-bouton" id="bouton-deconnexion" >Se déconnecter</button>
+    <script src="voyance.js"></script> 
+    <script>
+        $(document).ready(function () {
+
+            console.log('Page chargee => Debut du Script');
+            afficherVoyance(false);
+
+            $('#bouton-deconnexion').on('click', function() {
+
+                // affichage pour debugage dans la console javascript du navigateur
+                console.log('Click sur le bouton "Se Deconnecter"');
+
+                // appel de la fonction deconnexion
+                deconnexion();
+
+            });
+         });
+    </script>
+    </body>
+</html>

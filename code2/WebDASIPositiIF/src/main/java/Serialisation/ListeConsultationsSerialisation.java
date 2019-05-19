@@ -25,7 +25,7 @@ public class ListeConsultationsSerialisation extends Serialisation {
     public void serialiser(HttpServletRequest request, HttpServletResponse response) {
         JsonArray jsonArrayConsult = new JsonArray();
         
-        List<Consultation> consultations = (List<Consultation>) request.getAttribute("consultations");
+        List<Consultation> consultations = (List<Consultation>) request.getAttribute("listeConsultations");
         if(consultations != null){
             for(Consultation consult : consultations) {
                 JsonObject jsonConsult = new JsonObject();

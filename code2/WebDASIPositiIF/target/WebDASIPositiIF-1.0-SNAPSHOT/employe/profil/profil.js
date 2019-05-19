@@ -105,19 +105,30 @@ function afficherPopulariteMediums() {
         
     }).done(function (response) {
         if(response.populariteMediums != null) {
+            console.log('Tracage du diagramme pop medium');
+            // calcul du nombre total de voyance
+            var totalVoyance = 0
+            for(var i = 0; i<response.populariteMediums.length; i++) {
+                totalVoyance += response.populariteMediums[i].nombreVoyance;
+            }
+
             var aRemplir = document.getElementById("graphe_Popularite_Mediums");
             
             var ul = document.createElement("ul");
-            
+            ul.setAttribute("class", "chart");
             for(var i = 0; i<response.populariteMediums.length; i++) {
                 console.log(response.populariteMediums[i].nom);
                 var li = document.createElement("li");
-                var liText = document.createTextNode(response.populariteMediums[i].nombreVoyance + ":" + response.populariteMediums[i].nom);
-                li.appendChild(liText);
+                var span = document.createElement("span");
+                var pourcentage = response.populariteMediums[i].nombreVoyance / totalVoyance * 100;
+                span.setAttribute("style", "height:"+pourcentage+"%");
+                span.setAttribute("title",  response.populariteMediums[i].nom + " : " + response.populariteMediums[i].nombreVoyance);
+                li.appendChild(span);
                 ul.appendChild(li);
             }
             aRemplir.appendChild(ul);
-            console.log('Réussite');
+           
+            
         }
         else
         {
@@ -152,19 +163,28 @@ function afficherPerfomanceEmployes() {
     }).done(function (response) {
         console.log(response);
         if(response.performanceEmployes != null) {
-            var aRemplir = document.getElementById("graphe_Performance_Employes");
-            aRemplir 
-            var ul = document.createElement("ul");
-            
+            console.log('Tracage du diagramme employe perf');
+            // calcul du nombre total de voyance
+            var totalVoyance = 0
             for(var i = 0; i<response.performanceEmployes.length; i++) {
-                console.log("i");
+                totalVoyance += response.performanceEmployes[i].nombreVoyances;
+            }
+
+            var aRemplir = document.getElementById("graphe_Performance_Employes");
+            
+            var ul = document.createElement("ul");
+            ul.setAttribute("class", "chart");
+            for(var i = 0; i<response.performanceEmployes.length; i++) {
+                console.log(response.performanceEmployes[i].nom);
                 var li = document.createElement("li");
-                var liText = document.createTextNode(response.performanceEmployes[i].nombreVoyances + ":" + response.performanceEmployes[i].nom);
-                li.appendChild(liText);
+                var span = document.createElement("span");
+                var pourcentage = response.performanceEmployes[i].nombreVoyances / totalVoyance * 100;
+                span.setAttribute("style", "height:"+pourcentage+"%");
+                span.setAttribute("title",  response.performanceEmployes[i].nom + " : " + response.performanceEmployes[i].nombreVoyances);
+                li.appendChild(span);
                 ul.appendChild(li);
             }
             aRemplir.appendChild(ul);
-            console.log('Réussite');
         }
         else
         {
@@ -209,27 +229,6 @@ function deconnexion() {
     });
 }
 
-function makeGraph() {
-            var container = document.getElementById("graphe_Popularite_Mediums");
-            var labels = document.getElementById("labelsM");
-            var dnl = container.getElementsByTagName("li");
-            for(var i = 0; i < dnl.length; i++) {
-                var item = dnl.item(i);
-                var value = item.innerHTML;
-                var content = value.split(":");
-                value = content[0];
-                item.style.height=value + "px";
-                item.style.top=(199 - value) + "px";
-                item.style.left = (i * 50 + 20) + "px";
-                item.style.height = value + "px";
-                item.innerHTML = value;
-                item.style.visibility="visible";	
-                left = new String(i * 50 + 58) + "px";
-                labels.innerHTML = labels.innerHTML + 
-                "<span style='position:absolute;top:-16px;left:"+ 
-                left+";background:"+ color+"'>" + year + "</span>";
-            }	
-        }
 
     $(document).ready(function () {
 
@@ -237,8 +236,6 @@ function makeGraph() {
         afficherListeMediums();
         afficherPopulariteMediums();
         afficherPerfomanceEmployes();
-        makeGraph();
-        window.onload=makeGraph;
         $('#bouton-deconnexion').on('click', function() {
 
             // affichage pour debugage dans la console javascript du navigateur

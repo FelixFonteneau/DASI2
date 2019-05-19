@@ -9,11 +9,13 @@ import Action.Action;
 import Action.AfficherMediumsAction;
 import Action.AfficherPerformanceAction;
 import Action.AfficherPopulariteAction;
+import Action.CloreConsultationAction;
 import Action.ConnecterClientAction;
 import Action.ConnecterEmployeAction;
 import Action.ConsultationActuelleClientAction;
 import Action.DeconnexionAction;
 import Action.DemandeConsultationAction;
+import Action.GenererPredictionAction;
 import Action.InfoClientAction;
 import Action.HistoriqueClientAction;
 import Action.InscrireClientAction;
@@ -22,6 +24,7 @@ import Action.VoyanceEmployeAction;
 import Serialisation.InfoClientSerialisation;
 import Serialisation.ConnecterSerialisation;
 import Serialisation.ConsultationActuelleClientSerialisation;
+import Serialisation.GenererPredictionSerialisation;
 import Serialisation.ListeConsultationsSerialisation;
 import Serialisation.Serialisation;
 import Serialisation.ListeMediumsSerialisation;
@@ -37,6 +40,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.insalyon.dasi.positif.DAO.JpaUtil;
+import fr.insalyon.dasi.positif.Metier.Service.Services;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -92,6 +96,13 @@ public class ActionServlet extends HttpServlet {
                 case "afficherVoyance":
                     act = new VoyanceEmployeAction();
                     serialisation = new VoyanceEmployeSerialisation();
+                break;
+                case "genererPrediction":
+                    act= new GenererPredictionAction();
+                    serialisation = new GenererPredictionSerialisation();
+                break;
+                case "cloreConsultation":
+                    act= new CloreConsultationAction();
                 break;
                 case "historiqueClient":
                     act = new HistoriqueClientAction();

@@ -61,6 +61,19 @@ div{
     width:660px;
 }
 
+.boite{
+        text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* 0.5 - semi-transparent */
+    border: 2px solid violet;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    width:auto;
+}
+
 .message { margin: 25px; padding: 10px; border-radius: 10px; border: 2px solid violet; }
 
 .centrer {
@@ -86,12 +99,54 @@ table{
 
 }
 
+/*==== histogramme ==== */
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 60%;
+  max-width: 700px;
+  height: 200px;
+  margin: 0 auto;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
+  background-size: 100% 50px;
+  background-position: left top;
+}
+.chart li {
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 200px;
+}
+.chart span {
+  margin: 0 1em;
+  display: block;
+  background: rgba(209, 236, 250, 0.75);
+  animation: draw 1s ease-in-out;
+}
+.chart span:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding: 5px 1em 0;
+  display: block;
+  text-align: center;
+  content: attr(title);
+  word-wrap: break-word;
+}
+
+@keyframes draw {
+  0% {
+    height: 0;
+  }
+}
+
 .joli-bouton { 
     padding: 3px 10px; 
     border-radius: 5px; 
     border-width: 3px; 
     cursor: pointer;
-    color: rgb(255,255,204);
+    color: rgb(50,0,50);
 }
 
 a:link {

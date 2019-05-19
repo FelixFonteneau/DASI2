@@ -21,7 +21,7 @@ public class VoyanceEmployeAction extends Action {
         Services s = new Services();
         HttpSession session = request.getSession();
         Consultation voyanceEnCours = s.getConsultEnCours((Employe)session.getAttribute("employe"));
-        
+    
         request.setAttribute("voyanceEnCours", voyanceEnCours);
         if(voyanceEnCours != null) {
             request.setAttribute("client", voyanceEnCours.getClient());

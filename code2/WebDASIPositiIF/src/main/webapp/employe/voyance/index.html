@@ -14,14 +14,10 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel=StyleSheet href="../../src/employe.css" type="text/css" />
 
-        <style>
-            /* Feuille de Style CSS (dans la page) */
-            #message { margin: 25px; padding: 10px; border-radius: 10px; border: 2px solid violet; }
-            button.joli-bouton { padding: 3px 10px; border-radius: 5px; border-width: 3px; cursor: pointer; }
-        </style>
         
     </head>
     <body>
+        <h2 class="centrer">Posit'IF Employé</h2>
         <h1>Voyance</h1>
         <div class="boite-grande" id = "voyance">
         
@@ -29,9 +25,26 @@ and open the template in the editor.
         </div>
         
         <a class="boite-petite joli-bouton" href="../profil">Retour au profil</a>
-        <button class="boite-petite joli-bouton" id="bouton-deconnexion" class="joli-bouton">Se déconnecter</button>
+        <button class="boite-petite joli-bouton" id="bouton-deconnexion" >Se déconnecter</button>
+    
+    <script src="voyance.js"></script> 
+    <script>
+        $(document).ready(function () {
 
-    <script src="voyance.js"></script>
+            console.log('Page chargee => Debut du Script');
+            afficherVoyance(true);
+
+            $('#bouton-deconnexion').on('click', function() {
+
+                // affichage pour debugage dans la console javascript du navigateur
+                console.log('Click sur le bouton "Se Deconnecter"');
+
+                // appel de la fonction deconnexion
+                deconnexion();
+
+            });
+        });
+    </script>
     
     </body>
 </html>

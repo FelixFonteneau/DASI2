@@ -19,8 +19,8 @@ function historique() {
 
     }).done( function (response) {  // Appel OK => "response" contient le resultat JSON ;
         var aRemplir = document.getElementById("historique_voyance");
-        if(response.Consultations.consultations != null && response.Consultations.consultations.length > 0) {
-            console.log("maa");
+        if(response.Consultations != null && response.Consultations.length > 0) {
+            console.log(response.Consultations);
             var tbl = document.createElement("table");
 
             var tblBody = document.createElement("tbody");
@@ -35,17 +35,35 @@ function historique() {
             var cellText = document.createTextNode("Date");
             cell.appendChild(cellText);
             row.appendChild(cell);
-
-            for(var i = 0; i<response.Mediums.length; i++) {
+            
+            var cell = document.createElement("th");
+            var cellText = document.createTextNode("Commentaire");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            
+            tblBody.appendChild(row);
+            for(var i = 0; i<response.Consultations.length; i++) {
                 var row = document.createElement("tr");
                 
                 var cell = document.createElement("td");
-                var cellText = document.createTextNode(response.Consultations.consultations[i].medium.nom);
+                var cellText = document.createTextNode(response.Consultations[i].medium);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 
                 var cell = document.createElement("td");
-                var cellText = document.createTextNode(response.Consultations.consultations[i].date);
+                var cellText = document.createTextNode(response.Consultations[i].date);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                
+                var cell = document.createElement("td");
+                var commentaire;
+                if(response.Consultations[i].commentaire != null){
+                    commentaire = response.Consultations[i].commentaire;
+                }else{
+                    commentaire = "La consultation est en cours de traitement par notre voyant.";
+                }
+                
+                var cellText = document.createTextNode(commentaire);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
                 

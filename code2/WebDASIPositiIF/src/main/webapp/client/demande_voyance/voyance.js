@@ -41,6 +41,12 @@ function remplirMediums(){
             cell.appendChild(cellText);
             row.appendChild(cell);
             tblBody.appendChild(row);
+            
+            var cell = document.createElement("th");
+            var cellText = document.createTextNode("Sélectionner");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            tblBody.appendChild(row);
 
             for(var i = 0; i<response.Mediums.length; i++) {
                 var row = document.createElement("tr");
@@ -61,6 +67,8 @@ function remplirMediums(){
                 row.appendChild(cell);
                 
                 var bouton = document.createElement("button");
+                var boutonText = document.createTextNode("Choisir ce voyant");
+                bouton.appendChild(boutonText);
                 bouton.setAttribute("onclick", "demandeVoyance('"+response.Mediums[i].nom+"')"); 
                 bouton.setAttribute("class", "joli-bouton"); 
                 
@@ -104,7 +112,7 @@ function demandeVoyance(voyant_var){
         console.log( response);
         if(response.Demande.demandeVoyance == "en cours") {
             alert("Une voyance a été demandée à un Medium");
-            window.location('../profil');
+            window.location = '../profil';
         }
         else
         {
